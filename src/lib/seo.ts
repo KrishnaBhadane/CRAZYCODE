@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import site from "@/data/site";
 
-export const siteUrl = new URL(process.env.SITE_URL || "https://kreepycode.com");
+export const siteUrl = new URL(process.env.SITE_URL || "https://kreepycode.vercel.app");
 const title = `${site.name} | Freelance Web Design & Development`;
 const image = {
   url: "/images/social-card.png",
@@ -15,6 +15,7 @@ export const siteMetadata: Metadata = {
   title: { default: title, template: `%s | ${site.name}` },
   description: site.description,
   applicationName: site.name,
+  verification: { google: process.env.GOOGLE_SITE_VERIFICATION || undefined },
   authors: [{ name: site.name }],
   creator: site.name,
   alternates: { canonical: "/" },

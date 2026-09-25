@@ -39,7 +39,7 @@ npm run check:seo
 
 ## SEO
 
-The confirmed production address is **https://kreepycode.com**. To override it, copy `.env.example` to `.env.local`, update `SITE_URL`, and rebuild. Use the same value in the deployment environment.
+The confirmed production address is **https://kreepycode.vercel.app**. To override it, copy `.env.example` to `.env.local`, update `SITE_URL`, and rebuild. Use the same value in the deployment environment.
 
 The homepage has a canonical link, descriptive metadata, Open Graph/Twitter images, and Organization/WebSite JSON-LD. `/robots.txt` and `/sitemap.xml` are generated as static files. Section anchors are not separate sitemap pages. The animated headline has a single readable text copy; decorative letter repetitions are CSS content.
 
@@ -56,3 +56,5 @@ Browser tabs use `public/images/favicon.svg`, a circular badge with transparent 
 The flame canvas caches gradients and fixed geometry between resizes, caps resolution at 1200 × 800, and targets 30 FPS with drift-corrected timing. Mobile uses five ribbons and fewer curve segments to keep each frame light. CSS animations pause in hidden tabs; the contact sculpture also pauses offscreen.
 
 Motion uses a single section observer, CSS transforms, and a CSS 3D sculpture, without a WebGL dependency. The hero pins on desktop and mobile; taller heroes scroll to their bottom before pinning so all content stays reachable. Reduced-motion layouts scroll normally. Hidden flame rendering pauses when the hero is covered. Pricing explanations use compact native disclosure controls.
+
+For Google Search Console, add a URL-prefix property for the live origin and choose HTML tag verification. Set `GOOGLE_SITE_VERIFICATION` in Vercel Production to the tag’s content value, redeploy, then verify ownership. Submit `/sitemap.xml` and request indexing for the homepage. A Vercel `SITE_URL` setting overrides the repository default; keep it set to the actual public origin.
