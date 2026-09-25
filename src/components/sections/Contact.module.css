@@ -1,0 +1,14 @@
+.contact { padding: clamp(70px,8vw,120px) clamp(24px,5.5vw,88px); background: var(--color-cream); }
+.inner { max-width: 1264px; margin-inline: auto; }
+.intro { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(30px,5vw,70px); align-items: center; }
+.intro h2 { font-size: clamp(60px,7.5vw,104px); font-weight: 400; letter-spacing: -.03em; line-height: 1.05; }
+.intro h2 > span { color: var(--color-tomato); }
+.email { display: flex; gap: 12px; align-items: center; font-size: clamp(13px,1.4vw,18px); overflow-wrap: anywhere; font-weight: 600; }
+.email span { color: var(--color-tomato); font-size: 30px; }
+@media(max-width: 900px) { .intro { grid-template-columns: 1fr; } .intro h2 { font-size: clamp(60px,12vw,100px); } }
+@media(max-width: 760px) {
+  .headingArt { display: grid; grid-template-columns: minmax(0,1fr) 90px; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .headingArt h2 { font-size: clamp(32px,8.6vw,64px); }
+  .sculpture { width: 90px; }
+  .sculpture > div { width: 90px; margin: 0; transform: scale(.8); transform-origin: left center; }
+}

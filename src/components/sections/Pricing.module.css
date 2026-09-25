@@ -1,0 +1,61 @@
+.pricing { padding: clamp(60px, 7vw, 100px) clamp(24px, 5.5vw, 88px); background: var(--color-basil); color: var(--color-soil); }
+.inner { max-width: 1264px; margin-inline: auto; }
+.title { font-size: clamp(64px, 8vw, 112px); font-weight: 400; line-height: 1; letter-spacing: -.025em; }
+.title > span { color: var(--color-tomato); }
+.packages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px; margin-top: 45px; }
+.plan { display: flex; flex-direction: column; padding: clamp(28px, 3.5vw, 48px); background: var(--color-cream); }
+.plan[data-plan="fullstack"] { background: var(--color-soil); color: var(--color-cream); }
+.plan h3 { font-size: clamp(40px, 4.2vw, 59px); font-weight: 400; text-transform: uppercase; letter-spacing: -.015em; }
+.plan h3 > span { color: var(--color-tomato); }
+.description { max-width: 340px; min-height: 48px; margin-top: 14px; font-size: 13px; line-height: 1.8; }
+.price { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 14px; margin-block: 30px; }
+.price > span:first-child { flex-basis: 100%; font-size: 11px; }
+.price strong { font-family: var(--font-poster); font-size: clamp(56px, 6vw, 82px); font-weight: 400; line-height: 1.2; letter-spacing: -.02em; }
+.price > span:last-child { font-size: 11px; }
+.plan ul { display: grid; gap: 15px; padding-top: 25px; border-top: 1px solid #54392d35; list-style: none; }
+.plan[data-plan="fullstack"] ul { border-color: #f5f1e835; }
+.plan li { display: flex; gap: 12px; align-items: baseline; font-size: 13px; }
+.plan li > span { color: var(--color-tomato); font-size: 18px; }
+.plan[data-plan="fullstack"] li > span { color: var(--color-basil); }
+.scope { max-width: 390px; margin: 28px 0; font-size: 11px; line-height: 1.85; }
+.cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 56px; margin-top: auto; padding: 15px 19px; background: var(--color-soil); color: var(--color-cream); font-size: 12px; font-weight: 700; transition: transform 180ms; }
+.plan[data-plan="fullstack"] .cta { background: var(--color-cream); color: var(--color-soil); }
+.cta > span { font-size: 23px; }
+.cta:hover { transform: translateY(-2px); }
+.hourly { display: flex; align-items: center; justify-content: space-between; gap: 25px; margin-top: 30px; padding-block: 28px; border-block: 1px solid #54392d65; }
+.hourly h3 { font-size: 32px; font-weight: 400; }
+.hourly p:not(.hourlyPrice) { margin-top: 6px; font-size: 12px; }
+.hourlyPrice { flex-shrink: 0; font-family: var(--font-poster); font-size: 45px; line-height: 1; }
+.hourlyPrice span { margin-left: 8px; font-family: var(--font-sans); font-size: 12px; }
+.hourly a { display: flex; align-items: center; gap: 30px; min-height: 48px; border-bottom: 1px solid currentColor; font-size: 12px; font-weight: 700; }
+.hourly a > span { font-size: 23px; }
+.terms { max-width: 790px; margin-top: 16px; font-size: 11px; line-height: 1.8; }
+@media (max-width: 760px) {
+  .packages { grid-template-columns: 1fr; margin-top: 30px; gap: 20px; }
+  .plan { padding: 28px; }
+  .plan h3 { font-size: 43px; }
+  .description { min-height: 0; }
+  .price strong { font-size: 66px; }
+  .plan li { font-size: 12px; }
+  .hourly { flex-wrap: wrap; gap: 22px; }
+  .hourly > div { flex-basis: 100%; }
+  .hourly h3 { font-size: 30px; }
+  .hourlyPrice { font-size: 40px; }
+  .hourly a { gap: 15px; }
+}
+@media (max-width: 360px) { .pricing { padding-inline: 18px; } .plan { padding: 25px; } .price strong { font-size: 58px; } }
+
+/* Soft transitions into the cream sections on either side. */
+.pricing { position: relative; isolation: isolate; }
+.pricing::before,.pricing::after { content: ""; position: absolute; z-index: -1; left: 0; right: 0; height: 55px; pointer-events: none; }
+.pricing::before { top: 0; background: linear-gradient(var(--color-cream),transparent); }
+.pricing::after { bottom: 0; background: linear-gradient(transparent,var(--color-cream)); }
+.plan { transition: transform 350ms ease, box-shadow 350ms ease; }
+@media(hover:hover) { .plan:hover { transform: translateY(-7px); box-shadow: 0 15px 30px #54392d18; } }
+.guide { display: block; margin-top: 28px; border-top: 1px solid #54392d55; }
+.guide details { border-bottom: 1px solid #54392d55; }
+.guide summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 60px; font-size: 15px; font-weight: 700; cursor: pointer; list-style: none; }
+.guide summary::-webkit-details-marker { display: none; }
+.guide summary span { font-size: 25px; transition: transform 200ms; }
+.guide details[open] summary span { transform: rotate(45deg); }
+.guide p { max-width: 750px; margin: 0; padding: 0 30px 20px 0; font-size: 14px; line-height: 1.8; }

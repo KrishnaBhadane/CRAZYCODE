@@ -1,0 +1,10 @@
+.scene { width: 155px; height: 165px; margin: 30px 0; perspective: 650px; }
+.orb { position: relative; width: 125px; height: 125px; transform-style: preserve-3d; animation: tumble 14s ease-in-out infinite; animation-play-state: var(--ambient-play-state,running); }
+.orb i { position: absolute; inset: 0; border: 6px solid var(--color-basil); border-radius: 50%; box-shadow: inset 2px 2px 0 #f5f1e8, 2px 2px 0 #54392d40; }
+.orb i:nth-child(2) { transform: rotateY(60deg); }
+.orb i:nth-child(3) { transform: rotateY(120deg); }
+.orb i:nth-child(4) { transform: rotateX(90deg); border-color: var(--color-soil); }
+.orb span { position: absolute; inset: 0; display: grid; place-items: center; color: var(--color-tomato); font-size: 95px; line-height: 1; transform: translateZ(12px); }
+.shadow { width: 100px; height: 12px; margin: 20px 12px 0; border-radius: 50%; background: radial-gradient(ellipse,#54392d35,transparent 70%); }
+@keyframes tumble { 0%,100% { transform: rotateX(-15deg) rotateY(-25deg) rotateZ(-10deg); } 50% { transform: translateY(-12px) rotateX(25deg) rotateY(155deg) rotateZ(15deg); } }
+@media(max-width: 760px) { .scene { width: 115px; height: 115px; } .orb { width: 90px; height: 90px; } .orb span { font-size: 65px; } }
