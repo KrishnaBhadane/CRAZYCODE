@@ -15,7 +15,9 @@ export const siteMetadata: Metadata = {
   title: { default: title, template: `%s | ${site.name}` },
   description: site.description,
   applicationName: site.name,
-  verification: { google: process.env.GOOGLE_SITE_VERIFICATION || undefined },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION || "7BHIMtqSsLtzdWNo5mfjGuPvZIPKGOK1yifmGIxXBZY",
+  },
   authors: [{ name: site.name }],
   creator: site.name,
   alternates: { canonical: "/" },
